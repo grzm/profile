@@ -1,0 +1,17 @@
+[user]
+	name = Michael Glaesemann
+	email = grzm@seespotcode.net
+[core]
+	excludesfile = /Users/grzm/.gitignore
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	pu = push
+	pl = pull
+	svn-diff = !git-svn-diff
