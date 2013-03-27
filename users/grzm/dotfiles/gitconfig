@@ -15,3 +15,7 @@
 	pu = push
 	pl = pull
 	svn-diff = !git-svn-diff
+[init]
+	templatedir = /Users/grzm/.git.d/templates/meetme
+[push]
+	default = upstream
