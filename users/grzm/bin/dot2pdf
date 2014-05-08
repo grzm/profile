@@ -1,0 +1,15 @@
+#!/bin/bash
+label=$1
+if [[ -z "${label}" ]]; then
+  echo "Please provide label" && exit 1
+fi
+
+format=$2
+if [[ -z "${format}" ]]; then
+    format=dot
+fi
+
+pdf="${label}.pdf"
+dot="${label}.dot"
+
+dot -Tpdf -K "${format}" -o "${pdf}" "${dot}"
