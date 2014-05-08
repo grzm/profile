@@ -3,6 +3,7 @@
 	email = grzm@seespotcode.net
 [core]
 	excludesfile = /Users/grzm/.gitignore
+	deltaBaseCacheLimit = 1G
 [color]
 	branch = auto
 	diff = auto
