@@ -16,7 +16,14 @@
 	pu = push
 	pl = pull
 	svn-diff = !git-svn-diff
-[init]
-	templatedir = /Users/grzm/.git.d/templates/meetme
+        lg = "log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+#[init]
+#	templatedir = /Users/grzm/.git.d/templates/meetme
 [push]
-	default = upstream
+	default = simple
+
+[pretty]
+cmedium="format:%C(auto,yellow)commit %H%C(auto,reset)%nCommit:     %cn <%ce>%nCommitDate: %cd (%cr)%n%n%w(0,4,4)%s%n%+b"
+
+[log]
+date=local
