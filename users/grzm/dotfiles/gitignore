@@ -1,2 +1,6 @@
 .DS_Store
 *~
+.idea
+.markdown-preview.html
+.cpcache
+.nrepl-port
