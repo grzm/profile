@@ -1,0 +1,20 @@
+#!/bin/bash
+
+## http://superuser.com/questions/117596/how-to-tail-the-latest-file-in-a-directory
+## Removed timestamp printing because isn't supported on Mac OS X
+## Assumes filenames are sortable by timestamp
+
+## assumes log dir is $PGDATA/pg_log
+
+LOG_EXT=${1:-log}
+
+## should confirm ext is log or csv
+
+LOGDIR="$PGDATA/pg_log"
+FILEPATTERN="*.${LOG_EXT}"
+LOGFILE="$(find "${LOGDIR}" -maxdepth 1 -type f -name "${FILEPATTERN}" | sort | tail -n 1)"
+echo "tailing ${LOGFILE}"
+
+tail -f "${LOGFILE}"
+
+

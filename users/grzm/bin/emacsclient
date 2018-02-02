@@ -1,0 +1,28 @@
+#!/bin/bash
+
+emacsformacosx="${HOME}/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+path="${EMACSCLIENT:-$emacsformacosx}"
+echo $emacsformacosx
+echo $path
+
+
+if [ ! -f "$(which lsof)" ]; then
+    osascript -e 'tell application "System Events" to display dialog "Make sure you have `lsof` installed on your system." buttons "OK" default button 1 with title "Unable to locate system utility"' >/dev/null 2>&1 &
+    exit 1
+fi
+
+if [ ! -f "$path" ]; then
+    osascript -e 'tell application "System Events" to display dialog "Make sure you have Emacs for Mac installed on your system, go to emacsformacosx.com" buttons "OK" default button 1 with title "Unable to locate Emacs"' >/dev/null 2>&1 &
+    exit 2
+fi
+
+socket_file=$(lsof -c Emacs | grep server | tr -s " " | cut -d' ' -f8)
+
+if [[ $socket_file == "" ]]; then
+    exec "$path" --alternate-editor="" $@
+else
+    exec "$path" -s $socket_file $@
+fi
+#!/bin/bash
+
+
