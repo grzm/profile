@@ -27,3 +27,5 @@ cmedium="format:%C(auto,yellow)commit %H%C(auto,reset)%nCommit:     %cn <%ce>%nC
 
 [log]
 date=local
+[diff]
+	noprefix = true
