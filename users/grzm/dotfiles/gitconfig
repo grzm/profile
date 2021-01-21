@@ -20,7 +20,7 @@
 #[init]
 #	templatedir = /Users/grzm/.git.d/templates/meetme
 [push]
-	default = simple
+	default = current
 
 [pretty]
 cmedium="format:%C(auto,yellow)commit %H%C(auto,reset)%nCommit:     %cn <%ce>%nCommitDate: %cd (%cr)%n%n%w(0,4,4)%s%n%+b"
